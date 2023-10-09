@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -49,7 +50,8 @@ fun NikoFirstScreen(navController: NavController) {
     val isCheckedEight = remember { mutableStateOf(false) }
     Column(
         modifier = Modifier.background(Color(0xFFB2A5C7))
-            .fillMaxSize(),
+            .fillMaxSize()
+            .verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
@@ -213,6 +215,7 @@ fun NikoFirstScreen(navController: NavController) {
                 .height(50.dp),
             containerColor = Color(0xFF07103F),
         )
+        Spacer(modifier = Modifier.height(10.dp))
     }
 }
 /**

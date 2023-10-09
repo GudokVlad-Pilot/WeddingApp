@@ -42,23 +42,23 @@ fun Navigation(navController: NavHostController = rememberNavController()) {
     }
 }
 
-////Function that disables autorotation
-//@Composable
-//fun LockScreenOrientation(orientation: Int) {
-//    val context = LocalContext.current
-//    DisposableEffect(Unit) {
-//        val activity = context.findActivity() ?: return@DisposableEffect onDispose {}
-//        val originalOrientation = activity.requestedOrientation
-//        activity.requestedOrientation = orientation
-//        onDispose {
-//            // restore original orientation when view disappears
-//            activity.requestedOrientation = originalOrientation
-//        }
-//    }
-//}
+//Function that disables autorotation
+@Composable
+fun LockScreenOrientation(orientation: Int) {
+    val context = LocalContext.current
+    DisposableEffect(Unit) {
+        val activity = context.findActivity() ?: return@DisposableEffect onDispose {}
+        val originalOrientation = activity.requestedOrientation
+        activity.requestedOrientation = orientation
+        onDispose {
+            // restore original orientation when view disappears
+            activity.requestedOrientation = originalOrientation
+        }
+    }
+}
 
-//fun Context.findActivity(): Activity? = when (this) {
-//    is Activity -> this
-//    is ContextWrapper -> baseContext.findActivity()
-//    else -> null
-//}
+fun Context.findActivity(): Activity? = when (this) {
+    is Activity -> this
+    is ContextWrapper -> baseContext.findActivity()
+    else -> null
+}

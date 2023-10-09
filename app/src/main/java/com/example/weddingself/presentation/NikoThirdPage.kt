@@ -113,7 +113,7 @@ fun NikoThirdScreen(navController: NavController) {
                     navController.navigate(Screen.FinalScreen.route)
                 }
                 else {
-                    Toast.makeText(context, "Неверно", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Давай по новой, всё херня!", Toast.LENGTH_SHORT).show()
                 }
             },
             content = { Text("ДАЛЬШЕ", fontSize = 24.sp, color = Color(0xFFC9CBD5),) },
@@ -122,6 +122,7 @@ fun NikoThirdScreen(navController: NavController) {
                 .height(50.dp),
             containerColor = Color(0xFF07103F),
         )
+        Spacer(modifier = Modifier.height(10.dp))
     }
 }
 /**
