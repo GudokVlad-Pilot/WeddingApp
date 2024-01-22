@@ -19,8 +19,10 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.relocation.BringIntoViewRequester
 import androidx.compose.foundation.relocation.bringIntoViewRequester
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
@@ -72,17 +74,21 @@ import kotlinx.coroutines.launch
 fun LoginScreen(navController: NavController) {
     var username by rememberSaveable {mutableStateOf("")}
     var password by rememberSaveable {mutableStateOf("")}
+    var format_count by rememberSaveable { mutableStateOf(0) }
     var passwordVisible by rememberSaveable { mutableStateOf(false) }
     val context = LocalContext.current
     Column(
         modifier = Modifier
             .background(Color(0xFFB2A5C7))
-            .fillMaxSize(),
+            .fillMaxSize()
+            .verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Row(
-            modifier = Modifier.fillMaxWidth().padding(20.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(20.dp),
             horizontalArrangement = Arrangement.SpaceBetween
         ){
             Image(
@@ -148,8 +154,6 @@ fun LoginScreen(navController: NavController) {
                 val image = if (passwordVisible)
                     Icons.Filled.Visibility
                 else Icons.Filled.VisibilityOff
-
-                // Please provide localized description for accessibility services
                 val description = if (passwordVisible) "Hide password" else "Show password"
 
                 IconButton(onClick = {passwordVisible = !passwordVisible}){
@@ -157,86 +161,50 @@ fun LoginScreen(navController: NavController) {
                 }
             },
             shape = RoundedCornerShape(24.dp),
-//            modifier = Modifier.bringIntoViewRequester(bringIntoViewRequester)
-//                .onFocusEvent { focusState ->
-//                    if (focusState.isFocused) {
-//                        coroutineScope.launch {
-//                            bringIntoViewRequester.bringIntoView()
-//                        }
-//                    }
-//                }
             modifier = Modifier.imePadding()
         )
         Spacer(modifier = Modifier.height(20.dp))
-        Text(text = "Забыли пароль?",
+        Text(text = "Forgot password?",
             fontSize = 16.sp,
             color = Color(0xFF07103F),
             textAlign = TextAlign.Center,
             fontWeight = FontWeight.Medium,
-            fontFamily = FontFamily.Cursive,
             modifier = Modifier.clickable {
-                Toast.makeText(context, "День рождения вашего партнёра", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Your partner's birthday", Toast.LENGTH_SHORT).show()
             }
             )
         Spacer(modifier = Modifier.height(60.dp))
         ExtendedFloatingActionButton(
             onClick = {
                 if ((password == "") || (username == "")) {
-                    Toast.makeText(context, "Заполните все поля", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Fill in all fields", Toast.LENGTH_SHORT).show()
                 }
-                else if ((password == "2001-04-07") && (username == "Niko")) {
+                else if ((password == "2001-01-01") && (username == "Niko")) {
                     navController.navigate(Screen.NikoFirstScreen.route)
                 }
-                else if ((password == "2002-06-10") && (username == "Charlie")) {
-                    Toast.makeText(context, "Charlie demo in progress", Toast.LENGTH_SHORT).show()
+                else if ((password == "2002-02-02") && (username == "Charlie")) {
+                    navController.navigate(Screen.CharlieFirstScreen.route)
+                }
+                else if ((password == "Final") && (username == "Final")) {
+                    navController.navigate(Screen.FinalScreen.route)
+                }
+                else if (((username=="Niko") || (username=="Charlie")) && (format_count>=3)) {
+                    Toast.makeText(context, "Use American system for the password", Toast.LENGTH_SHORT).show()
                 }
                 else {
-                    Toast.makeText(context, "Неправильное имя пользователя или пароль", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Incorrect username or password", Toast.LENGTH_SHORT).show()
+                    format_count += 1
                 }
             },
-            content = { Text("В ИГРУ!", fontSize = 24.sp, color = Color(0xFFC9CBD5),) },
+            content = { Text("PLAY!", fontSize = 24.sp, color = Color(0xFFC9CBD5),) },
             modifier = Modifier
                 .wrapContentWidth()
                 .height(50.dp),
             containerColor = Color(0xFF07103F),
         )
+        Spacer(modifier = Modifier.height(10.dp))
     }
 }
-
-//@OptIn(ExperimentalMaterial3Api::class)
-//@Composable
-//fun Username(){
-//    var username by rememberSaveable {mutableStateOf("")}
-//    var password by rememberSaveable {mutableStateOf("")}
-//    TextField(
-//        value = usernameState,
-//        onValueChange = { usernameState = it },
-//        colors = TextFieldDefaults.textFieldColors(
-//            containerColor = Color.White
-//        ),
-//        singleLine = true,
-//        placeholder = {
-//            Text("Username", fontSize = 16.sp)
-//        },
-//    )
-//}
-
-//@OptIn(ExperimentalMaterial3Api::class)
-//@Composable
-//fun Password(){
-//    var passwordState by remember { mutableStateOf(password)}
-//    TextField(
-//        value = passwordState,
-//        onValueChange = { passwordState = it },
-//        colors = TextFieldDefaults.textFieldColors(
-//            containerColor = Color.White
-//        ),
-//        singleLine = true,
-//        placeholder = {
-//            Text("Password", fontSize = 16.sp)
-//        },
-//    )
-//}
 
 /**
  * Preview function

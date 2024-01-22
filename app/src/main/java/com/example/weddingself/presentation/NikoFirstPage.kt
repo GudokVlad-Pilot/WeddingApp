@@ -10,13 +10,10 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Checkbox
-import androidx.compose.material3.CheckboxColors
 import androidx.compose.material3.ExtendedFloatingActionButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -49,12 +46,13 @@ fun NikoFirstScreen(navController: NavController) {
     val isCheckedEight = remember { mutableStateOf(false) }
     Column(
         modifier = Modifier.background(Color(0xFFB2A5C7))
-            .fillMaxSize(),
+            .fillMaxSize()
+            .verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Text(
-            text = "Задание 1",
+            text = "Task 1",
             fontSize = 48.sp,
             color = Color(0xFF07103F),
             textAlign = TextAlign.Center,
@@ -63,7 +61,7 @@ fun NikoFirstScreen(navController: NavController) {
         )
         Spacer(modifier = Modifier.height(10.dp))
         Text(
-            text = "Выберите правильные утверждения, касательно вашего партнёра",
+            text = "Choose the correct statements",
             fontSize = 32.sp,
             color = Color(0xFF07103F),
             textAlign = TextAlign.Center,
@@ -87,7 +85,7 @@ fun NikoFirstScreen(navController: NavController) {
                     enabled = true,
                 )
                 Text(
-                    text = "Что-то такое",
+                    text = "Statement for Niko 1",
                     color = Color(0xFF07103F),
                     modifier = Modifier.clickable {
                         isCheckedOne.value = !isCheckedOne.value
@@ -101,7 +99,7 @@ fun NikoFirstScreen(navController: NavController) {
                     onCheckedChange = { isCheckedTwo.value = it },
                     enabled = true,
                 )
-                Text(text = "Что-то такое два",
+                Text(text = "Statement for Niko 2",
                     color = Color(0xFF07103F),
                     modifier = Modifier.clickable {
                         isCheckedTwo.value = !isCheckedTwo.value
@@ -114,7 +112,7 @@ fun NikoFirstScreen(navController: NavController) {
                     onCheckedChange = { isCheckedThree.value = it },
                     enabled = true,
                 )
-                Text(text = "Ещё есть третье",
+                Text(text = "Statement for Niko 3",
                     color = Color(0xFF07103F),
                     modifier = Modifier.clickable {
                         isCheckedThree.value = !isCheckedThree.value
@@ -127,7 +125,7 @@ fun NikoFirstScreen(navController: NavController) {
                     onCheckedChange = { isCheckedFour.value = it },
                     enabled = true,
                 )
-                Text(text = "И четвертое",
+                Text(text = "Statement for Niko 4",
                     color = Color(0xFF07103F),
                     modifier = Modifier.clickable {
                         isCheckedFour.value = !isCheckedFour.value
@@ -140,7 +138,7 @@ fun NikoFirstScreen(navController: NavController) {
                     onCheckedChange = { isCheckedFive.value = it },
                     enabled = true,
                 )
-                Text(text = "Сиквел, пацаны!",
+                Text(text = "Statement for Niko 5",
                     color = Color(0xFF07103F),
                     modifier = Modifier.clickable {
                         isCheckedFive.value = !isCheckedFive.value
@@ -154,7 +152,7 @@ fun NikoFirstScreen(navController: NavController) {
                     onCheckedChange = { isCheckedSix.value = it },
                     enabled = true,
                 )
-                Text(text = "Ну рил, что тут ещё может быть?",
+                Text(text = "Statement for Niko 6",
                     color = Color(0xFF07103F),
                     modifier = Modifier.clickable {
                         isCheckedSix.value = !isCheckedSix.value
@@ -168,7 +166,7 @@ fun NikoFirstScreen(navController: NavController) {
                     onCheckedChange = { isCheckedSeven.value = it },
                     enabled = true,
                 )
-                Text(text = "А что если написать офигенно большой тест, чтобы он не уместился на одну строчку и тогда утверждение слетит или будет красивенько выглядить?",
+                Text(text = "Statement for Niko 7",
                     color = Color(0xFF07103F),
                     modifier = Modifier.clickable {
                         isCheckedSeven.value = !isCheckedSeven.value
@@ -182,7 +180,7 @@ fun NikoFirstScreen(navController: NavController) {
                     onCheckedChange = { isCheckedEight.value = it },
                     enabled = true,
                 )
-                Text(text = "Это неправильный вариант точно!",
+                Text(text = "Statement for Niko 8",
                     color = Color(0xFF07103F),
                     modifier = Modifier.clickable {
                         isCheckedEight.value = !isCheckedEight.value
@@ -204,15 +202,16 @@ fun NikoFirstScreen(navController: NavController) {
                     navController.navigate(Screen.NikoSecondScreen.route)
                 }
                 else {
-                    Toast.makeText(context, "Давай по новой, всё херня!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Try again!", Toast.LENGTH_SHORT).show()
                 }
             },
-            content = { Text("ДАЛЬШЕ", fontSize = 24.sp, color = Color(0xFFC9CBD5),) },
+            content = { Text("NEXT", fontSize = 24.sp, color = Color(0xFFC9CBD5),) },
             modifier = Modifier
                 .wrapContentWidth()
                 .height(50.dp),
             containerColor = Color(0xFF07103F),
         )
+        Spacer(modifier = Modifier.height(10.dp))
     }
 }
 /**

@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -58,7 +57,7 @@ fun NikoThirdScreen(navController: NavController) {
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Text(
-            text = "Задание 3",
+            text = "Task 3",
             fontSize = 48.sp,
             color = Color(0xFF07103F),
             textAlign = TextAlign.Center,
@@ -67,7 +66,7 @@ fun NikoThirdScreen(navController: NavController) {
         )
         Spacer(modifier = Modifier.height(10.dp))
         Text(
-            text = "Найдите следующее место и раздобудьте код для своего партнёра",
+            text = "Find this place and get the code for your partner",
             fontSize = 32.sp,
             color = Color(0xFF07103F),
             textAlign = TextAlign.Center,
@@ -78,7 +77,7 @@ fun NikoThirdScreen(navController: NavController) {
         )
         Spacer(modifier = Modifier.height(30.dp))
         Image(
-            painter = painterResource(id = R.drawable.test_picture_2),
+            painter = painterResource(id = R.drawable.nikotwo),
             contentDescription = "test",
             modifier = Modifier
                 .padding(10.dp)
@@ -109,19 +108,20 @@ fun NikoThirdScreen(navController: NavController) {
         Spacer(modifier = Modifier.height(30.dp))
         ExtendedFloatingActionButton(
             onClick = {
-                if (code_second == "0001"){
+                if (code_second == "1710"){
                     navController.navigate(Screen.FinalScreen.route)
                 }
                 else {
-                    Toast.makeText(context, "Неверно", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Try again!", Toast.LENGTH_SHORT).show()
                 }
             },
-            content = { Text("ДАЛЬШЕ", fontSize = 24.sp, color = Color(0xFFC9CBD5),) },
+            content = { Text("NEXT", fontSize = 24.sp, color = Color(0xFFC9CBD5),) },
             modifier = Modifier
                 .wrapContentWidth()
                 .height(50.dp),
             containerColor = Color(0xFF07103F),
         )
+        Spacer(modifier = Modifier.height(10.dp))
     }
 }
 /**

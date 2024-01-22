@@ -73,7 +73,4 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout-compose:1.0.0")
 
     implementation("androidx.compose.material:material-icons-extended")
-
-    // ExoPlayer
-    implementation ("com.google.android.exoplayer:exoplayer:2.15.1")
 }
