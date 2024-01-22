@@ -154,8 +154,6 @@ fun LoginScreen(navController: NavController) {
                 val image = if (passwordVisible)
                     Icons.Filled.Visibility
                 else Icons.Filled.VisibilityOff
-
-                // Please provide localized description for accessibility services
                 val description = if (passwordVisible) "Hide password" else "Show password"
 
                 IconButton(onClick = {passwordVisible = !passwordVisible}){
@@ -163,51 +161,42 @@ fun LoginScreen(navController: NavController) {
                 }
             },
             shape = RoundedCornerShape(24.dp),
-//            modifier = Modifier.bringIntoViewRequester(bringIntoViewRequester)
-//                .onFocusEvent { focusState ->
-//                    if (focusState.isFocused) {
-//                        coroutineScope.launch {
-//                            bringIntoViewRequester.bringIntoView()
-//                        }
-//                    }
-//                }
             modifier = Modifier.imePadding()
         )
         Spacer(modifier = Modifier.height(20.dp))
-        Text(text = "Забыли пароль?",
+        Text(text = "Forgot password?",
             fontSize = 16.sp,
             color = Color(0xFF07103F),
             textAlign = TextAlign.Center,
             fontWeight = FontWeight.Medium,
-            fontFamily = FontFamily.Cursive,
             modifier = Modifier.clickable {
-                Toast.makeText(context, "День рождения вашего партнёра", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Your partner's birthday", Toast.LENGTH_SHORT).show()
             }
             )
         Spacer(modifier = Modifier.height(60.dp))
         ExtendedFloatingActionButton(
             onClick = {
                 if ((password == "") || (username == "")) {
-                    Toast.makeText(context, "Заполните все поля", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Fill in all fields", Toast.LENGTH_SHORT).show()
                 }
-                else if ((password == "2001-04-07") && (username == "Niko")) {
+                else if ((password == "2001-01-01") && (username == "Niko")) {
                     navController.navigate(Screen.NikoFirstScreen.route)
                 }
-                else if ((password == "2002-06-10") && (username == "Charlie")) {
+                else if ((password == "2002-02-02") && (username == "Charlie")) {
                     navController.navigate(Screen.CharlieFirstScreen.route)
                 }
                 else if ((password == "Final") && (username == "Final")) {
                     navController.navigate(Screen.FinalScreen.route)
                 }
                 else if (((username=="Niko") || (username=="Charlie")) && (format_count>=3)) {
-                    Toast.makeText(context, "Что такое километр???", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Use American system for the password", Toast.LENGTH_SHORT).show()
                 }
                 else {
-                    Toast.makeText(context, "Неправильное имя пользователя или пароль", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Incorrect username or password", Toast.LENGTH_SHORT).show()
                     format_count += 1
                 }
             },
-            content = { Text("В ИГРУ!", fontSize = 24.sp, color = Color(0xFFC9CBD5),) },
+            content = { Text("PLAY!", fontSize = 24.sp, color = Color(0xFFC9CBD5),) },
             modifier = Modifier
                 .wrapContentWidth()
                 .height(50.dp),

@@ -57,7 +57,7 @@ fun CharlieThirdScreen(navController: NavController) {
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Text(
-            text = "Задание 3",
+            text = "Task 3",
             fontSize = 48.sp,
             color = Color(0xFF07103F),
             textAlign = TextAlign.Center,
@@ -66,7 +66,7 @@ fun CharlieThirdScreen(navController: NavController) {
         )
         Spacer(modifier = Modifier.height(10.dp))
         Text(
-            text = "Найдите следующее место и раздобудьте код для своего партнёра",
+            text = "Find this place and get the code for your partner",
             fontSize = 32.sp,
             color = Color(0xFF07103F),
             textAlign = TextAlign.Center,
@@ -112,10 +112,10 @@ fun CharlieThirdScreen(navController: NavController) {
                     navController.navigate(Screen.FinalScreen.route)
                 }
                 else {
-                    Toast.makeText(context, "Давай по новой, всё херня!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Try again!", Toast.LENGTH_SHORT).show()
                 }
             },
-            content = { Text("ДАЛЬШЕ", fontSize = 24.sp, color = Color(0xFFC9CBD5),) },
+            content = { Text("NEXT", fontSize = 24.sp, color = Color(0xFFC9CBD5),) },
             modifier = Modifier
                 .wrapContentWidth()
                 .height(50.dp),

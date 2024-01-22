@@ -57,7 +57,7 @@ fun CharlieSecondScreen(navController: NavController) {
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Text(
-            text = "Задание 2",
+            text = "Task 2",
             fontSize = 48.sp,
             color = Color(0xFF07103F),
             textAlign = TextAlign.Center,
@@ -66,7 +66,7 @@ fun CharlieSecondScreen(navController: NavController) {
         )
         Spacer(modifier = Modifier.height(10.dp))
         Text(
-            text = "Найдите это место и раздобудьте код",
+            text = "Find this place and get the code",
             fontSize = 32.sp,
             color = Color(0xFF07103F),
             textAlign = TextAlign.Center,
@@ -99,7 +99,7 @@ fun CharlieSecondScreen(navController: NavController) {
             ),
             singleLine = true,
             placeholder = {
-                Text("Код", fontSize = 16.sp)
+                Text("Code", fontSize = 16.sp)
             },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
             shape = RoundedCornerShape(24.dp),
@@ -112,10 +112,10 @@ fun CharlieSecondScreen(navController: NavController) {
                     navController.navigate(Screen.CharlieThirdScreen.route)
                 }
                 else {
-                    Toast.makeText(context, "Давай по новой, всё херня!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Try again!", Toast.LENGTH_SHORT).show()
                 }
             },
-            content = { Text("ДАЛЬШЕ", fontSize = 24.sp, color = Color(0xFFC9CBD5),) },
+            content = { Text("Next", fontSize = 24.sp, color = Color(0xFFC9CBD5),) },
             modifier = Modifier
                 .wrapContentWidth()
                 .height(50.dp),

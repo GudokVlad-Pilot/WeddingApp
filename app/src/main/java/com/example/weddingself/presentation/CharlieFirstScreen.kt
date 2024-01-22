@@ -52,7 +52,7 @@ fun CharlieFirstScreen(navController: NavController) {
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Text(
-            text = "Задание 1",
+            text = "Task 1",
             fontSize = 48.sp,
             color = Color(0xFF07103F),
             textAlign = TextAlign.Center,
@@ -61,7 +61,7 @@ fun CharlieFirstScreen(navController: NavController) {
         )
         Spacer(modifier = Modifier.height(10.dp))
         Text(
-            text = "Выберите правильные утверждения, касательно вашего партнёра",
+            text = "Choose the correct statements",
             fontSize = 32.sp,
             color = Color(0xFF07103F),
             textAlign = TextAlign.Center,
@@ -85,7 +85,7 @@ fun CharlieFirstScreen(navController: NavController) {
                     enabled = true,
                 )
                 Text(
-                    text = "Стаж Нико в Лиге Легенд - примерно 10 лет",
+                    text = "Statement for Charlie 1",
                     color = Color(0xFF07103F),
                     modifier = Modifier.clickable {
                         isCheckedOne.value = !isCheckedOne.value
@@ -99,7 +99,7 @@ fun CharlieFirstScreen(navController: NavController) {
                     onCheckedChange = { isCheckedTwo.value = it },
                     enabled = true,
                 )
-                Text(text = "Размер ноги Нико - 43",
+                Text(text = "Statement for Charlie 2",
                     color = Color(0xFF07103F),
                     modifier = Modifier.clickable {
                         isCheckedTwo.value = !isCheckedTwo.value
@@ -112,7 +112,7 @@ fun CharlieFirstScreen(navController: NavController) {
                     onCheckedChange = { isCheckedThree.value = it },
                     enabled = true,
                 )
-                Text(text = "Один из любимых мультиков Нико - Валл-и",
+                Text(text = "Statement for Charlie 3",
                     color = Color(0xFF07103F),
                     modifier = Modifier.clickable {
                         isCheckedThree.value = !isCheckedThree.value
@@ -125,7 +125,7 @@ fun CharlieFirstScreen(navController: NavController) {
                     onCheckedChange = { isCheckedFour.value = it },
                     enabled = true,
                 )
-                Text(text = "Нико мечтает купить Додж",
+                Text(text = "Statement for Charlie 4",
                     color = Color(0xFF07103F),
                     modifier = Modifier.clickable {
                         isCheckedFour.value = !isCheckedFour.value
@@ -138,7 +138,7 @@ fun CharlieFirstScreen(navController: NavController) {
                     onCheckedChange = { isCheckedFive.value = it },
                     enabled = true,
                 )
-                Text(text = "Нико предпочитает играть на саппортах",
+                Text(text = "Statement for Charlie 5",
                     color = Color(0xFF07103F),
                     modifier = Modifier.clickable {
                         isCheckedFive.value = !isCheckedFive.value
@@ -152,7 +152,7 @@ fun CharlieFirstScreen(navController: NavController) {
                     onCheckedChange = { isCheckedSix.value = it },
                     enabled = true,
                 )
-                Text(text = "Нико предпочитает носить худи",
+                Text(text = "Statement for Charlie 6",
                     color = Color(0xFF07103F),
                     modifier = Modifier.clickable {
                         isCheckedSix.value = !isCheckedSix.value
@@ -166,7 +166,7 @@ fun CharlieFirstScreen(navController: NavController) {
                     onCheckedChange = { isCheckedSeven.value = it },
                     enabled = true,
                 )
-                Text(text = "Нико пьёт холодный чай",
+                Text(text = "Statement for Charlie 7",
                     color = Color(0xFF07103F),
                     modifier = Modifier.clickable {
                         isCheckedSeven.value = !isCheckedSeven.value
@@ -180,7 +180,7 @@ fun CharlieFirstScreen(navController: NavController) {
                     onCheckedChange = { isCheckedEight.value = it },
                     enabled = true,
                 )
-                Text(text = "Однажды Нико работал вожатым",
+                Text(text = "Statement for Charlie 8",
                     color = Color(0xFF07103F),
                     modifier = Modifier.clickable {
                         isCheckedEight.value = !isCheckedEight.value
@@ -202,10 +202,10 @@ fun CharlieFirstScreen(navController: NavController) {
                     navController.navigate(Screen.CharlieSecondScreen.route)
                 }
                 else {
-                    Toast.makeText(context, "Давай по новой, всё херня!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Try again!", Toast.LENGTH_SHORT).show()
                 }
             },
-            content = { Text("ДАЛЬШЕ", fontSize = 24.sp, color = Color(0xFFC9CBD5),) },
+            content = { Text("NEXT", fontSize = 24.sp, color = Color(0xFFC9CBD5),) },
             modifier = Modifier
                 .wrapContentWidth()
                 .height(50.dp),
