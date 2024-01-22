@@ -38,7 +38,7 @@ import com.example.weddingself.ui.theme.WeddingSelfTheme
 @Composable
 fun FinalScreen(navController: NavController) {
     val context = LocalContext.current
-    val videoUri = Uri.parse("android.resource://com.example.weddingself/raw/water")
+    val videoUri = Uri.parse("android.resource://com.example.weddingself/raw/wedding")
     LockScreenOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
     Column(
         modifier = Modifier
@@ -71,23 +71,8 @@ fun FinalScreen(navController: NavController) {
 
         )
         Spacer(modifier = Modifier.height(10.dp))
-//        ExtendedFloatingActionButton(
-//            onClick = {
-//                navController.navigate(Screen.LoginScreen.route)
-//            },
-//            content = { Text("КОНЕЦ", fontSize = 24.sp, color = Color(0xFFC9CBD5),) },
-//            modifier = Modifier
-//                .wrapContentWidth()
-//                .height(50.dp),
-//            containerColor = Color(0xFF07103F),
-//        )
     }
 }
-
-//@Composable
-//fun playVideo(context: Context) {
-//    val videoUri = Uri.parse("android.resources://com.example.weddingself/raw/video.mp4")
-//}
 
 /**
  * Preview function

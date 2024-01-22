@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -78,7 +77,7 @@ fun NikoThirdScreen(navController: NavController) {
         )
         Spacer(modifier = Modifier.height(30.dp))
         Image(
-            painter = painterResource(id = R.drawable.test_picture_2),
+            painter = painterResource(id = R.drawable.nikotwo),
             contentDescription = "test",
             modifier = Modifier
                 .padding(10.dp)
@@ -109,7 +108,7 @@ fun NikoThirdScreen(navController: NavController) {
         Spacer(modifier = Modifier.height(30.dp))
         ExtendedFloatingActionButton(
             onClick = {
-                if (code_second == "0001"){
+                if (code_second == "1710"){
                     navController.navigate(Screen.FinalScreen.route)
                 }
                 else {

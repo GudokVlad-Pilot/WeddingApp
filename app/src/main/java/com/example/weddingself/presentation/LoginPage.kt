@@ -74,6 +74,7 @@ import kotlinx.coroutines.launch
 fun LoginScreen(navController: NavController) {
     var username by rememberSaveable {mutableStateOf("")}
     var password by rememberSaveable {mutableStateOf("")}
+    var format_count by rememberSaveable { mutableStateOf(0) }
     var passwordVisible by rememberSaveable { mutableStateOf(false) }
     val context = LocalContext.current
     Column(
@@ -85,7 +86,9 @@ fun LoginScreen(navController: NavController) {
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Row(
-            modifier = Modifier.fillMaxWidth().padding(20.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(20.dp),
             horizontalArrangement = Arrangement.SpaceBetween
         ){
             Image(
@@ -191,10 +194,17 @@ fun LoginScreen(navController: NavController) {
                     navController.navigate(Screen.NikoFirstScreen.route)
                 }
                 else if ((password == "2002-06-10") && (username == "Charlie")) {
-                    Toast.makeText(context, "Charlie demo in progress", Toast.LENGTH_SHORT).show()
+                    navController.navigate(Screen.CharlieFirstScreen.route)
+                }
+                else if ((password == "Final") && (username == "Final")) {
+                    navController.navigate(Screen.FinalScreen.route)
+                }
+                else if (((username=="Niko") || (username=="Charlie")) && (format_count>=3)) {
+                    Toast.makeText(context, "Что такое километр???", Toast.LENGTH_SHORT).show()
                 }
                 else {
                     Toast.makeText(context, "Неправильное имя пользователя или пароль", Toast.LENGTH_SHORT).show()
+                    format_count += 1
                 }
             },
             content = { Text("В ИГРУ!", fontSize = 24.sp, color = Color(0xFFC9CBD5),) },
@@ -206,41 +216,6 @@ fun LoginScreen(navController: NavController) {
         Spacer(modifier = Modifier.height(10.dp))
     }
 }
-
-//@OptIn(ExperimentalMaterial3Api::class)
-//@Composable
-//fun Username(){
-//    var username by rememberSaveable {mutableStateOf("")}
-//    var password by rememberSaveable {mutableStateOf("")}
-//    TextField(
-//        value = usernameState,
-//        onValueChange = { usernameState = it },
-//        colors = TextFieldDefaults.textFieldColors(
-//            containerColor = Color.White
-//        ),
-//        singleLine = true,
-//        placeholder = {
-//            Text("Username", fontSize = 16.sp)
-//        },
-//    )
-//}
-
-//@OptIn(ExperimentalMaterial3Api::class)
-//@Composable
-//fun Password(){
-//    var passwordState by remember { mutableStateOf(password)}
-//    TextField(
-//        value = passwordState,
-//        onValueChange = { passwordState = it },
-//        colors = TextFieldDefaults.textFieldColors(
-//            containerColor = Color.White
-//        ),
-//        singleLine = true,
-//        placeholder = {
-//            Text("Password", fontSize = 16.sp)
-//        },
-//    )
-//}
 
 /**
  * Preview function

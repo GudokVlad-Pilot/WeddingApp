@@ -9,15 +9,11 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Checkbox
-import androidx.compose.material3.CheckboxColors
 import androidx.compose.material3.ExtendedFloatingActionButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -89,7 +85,7 @@ fun NikoFirstScreen(navController: NavController) {
                     enabled = true,
                 )
                 Text(
-                    text = "Что-то такое",
+                    text = "Любимый персонаж Кью в игре Лига Легенд - Моргана",
                     color = Color(0xFF07103F),
                     modifier = Modifier.clickable {
                         isCheckedOne.value = !isCheckedOne.value
@@ -103,7 +99,7 @@ fun NikoFirstScreen(navController: NavController) {
                     onCheckedChange = { isCheckedTwo.value = it },
                     enabled = true,
                 )
-                Text(text = "Что-то такое два",
+                Text(text = "Размер ноги Кью - 43",
                     color = Color(0xFF07103F),
                     modifier = Modifier.clickable {
                         isCheckedTwo.value = !isCheckedTwo.value
@@ -116,7 +112,7 @@ fun NikoFirstScreen(navController: NavController) {
                     onCheckedChange = { isCheckedThree.value = it },
                     enabled = true,
                 )
-                Text(text = "Ещё есть третье",
+                Text(text = "Кью переехал в Финляндию в 2019",
                     color = Color(0xFF07103F),
                     modifier = Modifier.clickable {
                         isCheckedThree.value = !isCheckedThree.value
@@ -129,7 +125,7 @@ fun NikoFirstScreen(navController: NavController) {
                     onCheckedChange = { isCheckedFour.value = it },
                     enabled = true,
                 )
-                Text(text = "И четвертое",
+                Text(text = "Кью не любит Ассасин Крид",
                     color = Color(0xFF07103F),
                     modifier = Modifier.clickable {
                         isCheckedFour.value = !isCheckedFour.value
@@ -142,7 +138,7 @@ fun NikoFirstScreen(navController: NavController) {
                     onCheckedChange = { isCheckedFive.value = it },
                     enabled = true,
                 )
-                Text(text = "Сиквел, пацаны!",
+                Text(text = "Кью обожает яичницу",
                     color = Color(0xFF07103F),
                     modifier = Modifier.clickable {
                         isCheckedFive.value = !isCheckedFive.value
@@ -156,7 +152,7 @@ fun NikoFirstScreen(navController: NavController) {
                     onCheckedChange = { isCheckedSix.value = it },
                     enabled = true,
                 )
-                Text(text = "Ну рил, что тут ещё может быть?",
+                Text(text = "Любимое вино Кью - красное сухое",
                     color = Color(0xFF07103F),
                     modifier = Modifier.clickable {
                         isCheckedSix.value = !isCheckedSix.value
@@ -170,7 +166,7 @@ fun NikoFirstScreen(navController: NavController) {
                     onCheckedChange = { isCheckedSeven.value = it },
                     enabled = true,
                 )
-                Text(text = "А что если написать офигенно большой тест, чтобы он не уместился на одну строчку и тогда утверждение слетит или будет красивенько выглядить?",
+                Text(text = "Кью предпочитает Вольт, а не Фудору",
                     color = Color(0xFF07103F),
                     modifier = Modifier.clickable {
                         isCheckedSeven.value = !isCheckedSeven.value
@@ -184,7 +180,7 @@ fun NikoFirstScreen(navController: NavController) {
                     onCheckedChange = { isCheckedEight.value = it },
                     enabled = true,
                 )
-                Text(text = "Это неправильный вариант точно!",
+                Text(text = "Оскар Пиастри - любимый пилот Формулы 1 у Кью",
                     color = Color(0xFF07103F),
                     modifier = Modifier.clickable {
                         isCheckedEight.value = !isCheckedEight.value
