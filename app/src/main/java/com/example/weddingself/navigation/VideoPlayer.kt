@@ -15,6 +15,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 
+/**This file consists of composable function which will display the video in the created video player
+ * the user of the app can control the media in the player*/
 @Composable
 fun VideoPlayer(
   videoUri: Uri

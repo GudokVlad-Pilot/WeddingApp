@@ -26,6 +26,8 @@ import com.example.weddingself.navigation.LockScreenOrientation
 import com.example.weddingself.navigation.VideoPlayer
 import com.example.weddingself.ui.theme.WeddingSelfTheme
 
+/**This file contains the final words of the quest
+ * It has the congratulations and the video */
 @Composable
 fun FinalScreen(navController: NavController) {
     val context = LocalContext.current

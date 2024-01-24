@@ -19,6 +19,9 @@ import com.example.weddingself.presentation.NikoFirstScreen
 import com.example.weddingself.presentation.NikoSecondScreen
 import com.example.weddingself.presentation.NikoThirdScreen
 
+/**This file is created to structure the navigation through the app
+ * The composable functions take the route and display the file on the screen
+ * To connect all the screens the navController was used*/
 @Composable
 fun Navigation(navController: NavHostController = rememberNavController()) {
     NavHost(navController = navController, startDestination = Screen.LoginScreen.route) {
