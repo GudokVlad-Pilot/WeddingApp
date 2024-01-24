@@ -33,6 +33,8 @@ import androidx.navigation.NavController
 import com.example.weddingself.navigation.Screen
 import com.example.weddingself.ui.theme.WeddingSelfTheme
 
+/**This file is the first screen that user named "Niko" can see.
+ * It has the statements user should select to continue the quest*/
 @Composable
 fun NikoFirstScreen(navController: NavController) {
     val context = LocalContext.current

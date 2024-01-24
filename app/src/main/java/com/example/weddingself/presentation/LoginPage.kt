@@ -69,6 +69,10 @@ import com.example.weddingself.ui.theme.WeddingSelfTheme
 import kotlinx.coroutines.launch
 
 
+/**This file contains the initial screen of the app
+ * Users should guess their usernames and passwords to continue with the quest
+ * Username is their name
+ * Password is their partner's birthday in american format*/
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable
 fun LoginScreen(navController: NavController) {

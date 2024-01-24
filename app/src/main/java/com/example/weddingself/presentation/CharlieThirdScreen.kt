@@ -45,6 +45,8 @@ import com.example.weddingself.R
 import com.example.weddingself.navigation.Screen
 import com.example.weddingself.ui.theme.WeddingSelfTheme
 
+/**This file displays the picture of the place where the user should
+ *  go to find the code for the partner which allows to go to the final page*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CharlieThirdScreen(navController: NavController) {
